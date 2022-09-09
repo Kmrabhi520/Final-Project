@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="scriptv.js"></script>  
+</head>
+<style>
+    .Container {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .radioDiv {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .submitBtn {
+        display: flex;
+        padding: 25px;
+        justify-content: center;
+    }
+
+    .width {
+        width: 100%;
+    }
+
+    form {
+        width: 300px;
+        border: 2px solid;
+        padding: 20px;
+    }
+    body {
+  background-image: url('data:image/jpeg;base64,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');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+label {
+  background-color: lightblue;
+  color: black;
+  font-weight: bold;
+  padding: 4px;
+  text-transform: uppercase;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: xx-small;
+}
+.iro{
+	background-color:lightblue;
+  color: black;
+  font-weight: bold;
+  padding: 4px;
+  text-transform: uppercase;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: xx-small;
+}
+</style>
+
+<body>
+    <div class="Container">
+        
+        <form id="form" name="farmerForm" >
+            <h4 style="text-align: center;color: white;background-color: gray;">Best farm</h4>
+            <p style="text-align: center;">New farmer</p>
+            <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="Name">
+                <div id="error" style="color: red;"></div>
+            </div>
+            <div class="mb-3">
+                <label for="Age" class="form-label">Age</label>
+                <input type="number" class="form-control" name="age" id="age">
+                <div id="error1" style="color: red;"></div>
+            </div>
+            <div  class="iro" id="gender">Gender</div>
+
+            <div class="radioDiv">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gender" value="male">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gender" value="female" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Female
+                    </label>
+                </div>
+                
+            </div>
+            <div id="error2" style="color: red;"></div>
+            
+        </form>
+        <div class="submitBtn">
+                <button  onclick="onFormSubmit() ;" class="btn btn-success width" >Add</button>
+            </div>
+        </div>
+			<div id="msg">
+			
+			</div>
+    </div>
+<script>
+async function onFormSubmit() {
+         
+           console.log(document.forms['farmerForm'].name.value);
+
+
+     let queryStr = "?name="+document.forms['farmerForm'].name.value+"&age="+document.forms['farmerForm'].age.value+"&gender="+document.forms['farmerForm'].gender.value;
+
+            await fetch('/farmers/addnewfarmer'+queryStr , {   
+                method: 'GET',
+                headers: { "Content-Type":'application/x-www-form-urlencoded'  },
+                //body: formData
+            })
+               .then(res => res.json())
+                .then(res => {
+                    console.log(res);
+                    document.getElementById("msg").innerText = res.message;
+                    alert("message from backend"+res.message);
+                    
+                })
+                .catch(err =>  document.getElementById("msg").innerText ="Failed to add farmer");
+                
+        }
+</script>
+</body>
+
+</html>
